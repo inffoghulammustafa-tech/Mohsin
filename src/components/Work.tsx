@@ -12,18 +12,13 @@ interface ProjectProps {
   tags: string[];
   gradient: string;
   image: string;
+  link?: string;
   key?: number | string;
 }
 
-function ProjectCard({ title, description, tags, gradient, image }: ProjectProps) {
-  return (
-    <motion.div 
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6 }}
-      className="card-hover glass rounded-[2.5rem] p-4 group"
-    >
+function ProjectCard({ title, description, tags, gradient, image, link }: ProjectProps) {
+  const CardContent = (
+    <div className="card-hover glass rounded-[2.5rem] p-4 group h-full">
       <div className={`aspect-video bg-gradient-to-br ${gradient} rounded-[2rem] overflow-hidden mb-6 flex items-center justify-center relative`}>
         <img 
           src={image} 
@@ -46,6 +41,21 @@ function ProjectCard({ title, description, tags, gradient, image }: ProjectProps
           ))}
         </div>
       </div>
+    </div>
+  );
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
+    >
+      {link ? (
+        <a href={link} target="_blank" rel="noopener noreferrer" className="block h-full">
+          {CardContent}
+        </a>
+      ) : CardContent}
     </motion.div>
   );
 }
@@ -53,18 +63,20 @@ function ProjectCard({ title, description, tags, gradient, image }: ProjectProps
 export default function Work() {
   const projects: ProjectProps[] = [
     {
-      title: "Modern SaaS Dashboard",
-      description: "Aik complete analytics dashboard jo real-time data visualization provide karta hai.",
-      tags: ["React", "Tailwind"],
-      gradient: "from-blue-900/20 to-purple-900/20",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+      title: "Tasty Bites - Food Delivery",
+      description: "Aik premium food delivery system with focus on freshly baked magic.",
+      tags: ["React", "CSS"],
+      gradient: "from-green-900/20 to-emerald-900/20",
+      image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800",
+      link: "https://pizza-hut-murex.vercel.app/",
     },
     {
-      title: "E-Commerce Experience",
-      description: "High-performance shopping experience with seamless checkout and animations.",
-      tags: ["Next.js", "Stripe"],
-      gradient: "from-emerald-900/20 to-teal-900/20",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800",
+      title: "Lavish Bridal Salon",
+      description: "Aik premium beauty saloon platform focused on bridal services and elegant aesthetics.",
+      tags: ["React", "Aesthetics"],
+      gradient: "from-pink-900/20 to-rose-900/20",
+      image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800",
+      link: "https://bridal-saloon.vercel.app/",
     }
   ];
 
@@ -109,6 +121,7 @@ export default function Work() {
             tags={project.tags}
             gradient={project.gradient}
             image={project.image}
+            link={project.link}
           />
         ))}
       </div>

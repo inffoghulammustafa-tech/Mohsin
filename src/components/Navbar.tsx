@@ -14,30 +14,37 @@ export default function Navbar() {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="fixed w-full z-50 top-6 px-4"
     >
-      <div className="max-w-5xl mx-auto glass rounded-2xl px-4 py-3 flex justify-between items-center">
-        <a href="#home" className="flex items-center gap-2 transition-transform hover:scale-105 active:scale-95">
-          <img 
-            src="https://t3.ftcdn.net/jpg/04/23/48/64/360_F_423486482_RIrfPyzuCwbuQlPTlTx7GAs81o6OmuE4.jpg" 
-            alt="Logo" 
-            className="w-10 h-10 rounded-full object-cover border border-white/20 shadow-lg shadow-blue-500/20"
-          />
-        </a>
-        <div className="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-          <a href="#home" className="hover:text-white transition-colors">Home</a>
-          <a href="#work" className="hover:text-white transition-colors">Work</a>
-          <a href="#about" className="hover:text-white transition-colors">About</a>
-          <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+      <div className="max-w-5xl mx-auto glass rounded-2xl px-6 py-4 flex items-center shadow-2xl">
+        <div className="flex-1 flex justify-start">
+          <a href="#home" className="flex items-center gap-2 transition-transform hover:scale-110 active:scale-95">
+            <img 
+              src="https://t3.ftcdn.net/jpg/04/23/48/64/360_F_423486482_RIrfPyzuCwbuQlPTlTx7GAs81o6OmuE4.jpg" 
+              alt="Logo" 
+              className="w-14 h-14 rounded-full object-cover border-2 border-white/20 shadow-xl shadow-blue-500/20"
+            />
+          </a>
         </div>
-        <a 
-          href="https://wa.me/YOUR_NUMBER" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#25D366] hover:bg-[#20ba59] text-white px-5 py-2 rounded-xl text-sm font-bold transition-all hover:scale-105 active:scale-95 flex items-center gap-2 shadow-lg shadow-green-500/20"
-        >
-          <MessageCircle size={18} fill="currentColor" />
-          <span className="hidden sm:inline">WhatsApp</span>
-          <span className="sm:hidden">Chat</span>
-        </a>
+
+        <div className="hidden md:flex gap-8 text-sm font-medium text-gray-400 items-center justify-center">
+          <a href="#home" className="hover:text-white transition-colors relative group">
+            Home
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-blue-500 transition-all group-hover:w-full" />
+          </a>
+          <a href="#work" className="hover:text-white transition-colors relative group">
+            Work
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-blue-500 transition-all group-hover:w-full" />
+          </a>
+          <a href="#about" className="hover:text-white transition-colors relative group">
+            About
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-blue-500 transition-all group-hover:w-full" />
+          </a>
+          <a href="#contact" className="hover:text-white transition-colors relative group">
+            Contact
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-blue-500 transition-all group-hover:w-full" />
+          </a>
+        </div>
+
+        <div className="flex-1 flex justify-end" /> 
       </div>
     </motion.nav>
   );
