@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #3b82f6;
+}
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-[#030712] text-[#f3f4f6] font-sans antialiased overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/3 backdrop-blur-xl border border-white/8;
+  }
+
+  .hero-gradient {
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, rgba(3, 7, 18, 1) 70%);
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/40 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)];
+  }
+}
