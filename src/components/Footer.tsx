@@ -126,7 +126,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-xs">© {currentYear} Mustafa. All rights reserved.</p>
+          <p className="text-gray-500 text-xs">© {currentYear} Mohsin. All rights reserved.</p>
           <div className="flex gap-8 text-[10px] text-gray-600 font-bold uppercase tracking-widest">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

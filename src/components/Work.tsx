@@ -64,7 +64,7 @@ export default function Work() {
   const projects: ProjectProps[] = [
     {
       title: "Tasty Bites - Food Delivery",
-      description: "Aik premium food delivery system with focus on freshly baked magic.",
+      description: "A premium food delivery system with focus on freshly baked magic.",
       tags: ["React", "CSS"],
       gradient: "from-green-900/20 to-emerald-900/20",
       image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800",
@@ -72,7 +72,7 @@ export default function Work() {
     },
     {
       title: "Lavish Bridal Salon",
-      description: "Aik premium beauty saloon platform focused on bridal services and elegant aesthetics.",
+      description: "A premium beauty salon platform focused on bridal services and elegant aesthetics.",
       tags: ["React", "Aesthetics"],
       gradient: "from-pink-900/20 to-rose-900/20",
       image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800",
@@ -99,7 +99,7 @@ export default function Work() {
             transition={{ delay: 0.1 }}
             className="text-gray-400"
           >
-            Wo projects jo maine haal hi mein deliver kiye hain.
+            A selection of my recently delivered projects.
           </motion.p>
         </div>
         <motion.span 

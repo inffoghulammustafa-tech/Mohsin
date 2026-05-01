@@ -3,8 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { motion } from "motion/react";
+import { motion, useMotionValue, useTransform, animate } from "motion/react";
+import { useEffect, useRef } from "react";
 import { Plus, Zap } from "lucide-react";
+
+function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const controls = animate(count, target, {
+      duration: 2,
+      ease: "easeOut",
+    });
+    return controls.stop;
+  }, [target, count]);
+
+  return <motion.span>{rounded}</motion.span>;
+}
 
 export default function About() {
   const stats = [
@@ -26,15 +43,6 @@ export default function About() {
   return (
     <section id="about" className="py-24 px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* Top Navigation Concept (Simplified as Section Header) */}
-        <div className="flex justify-center mb-20">
-          <div className="glass px-8 py-3 rounded-full border border-white/10 flex items-center gap-8 text-sm">
-            <a href="#home" className="text-gray-400 hover:text-white transition-colors">Home</a>
-            <a href="#about" className="text-white relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-[2px] after:bg-red-500">About</a>
-            <a href="#work" className="text-gray-400 hover:text-white transition-colors">Projects</a>
-            <a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
-          </div>
-        </div>
 
         {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
@@ -106,7 +114,10 @@ export default function About() {
               transition={{ delay: index * 0.1 }}
               className="glass p-10 rounded-3xl border border-white/5 text-center transition-all hover:border-white/10"
             >
-              <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
+              <div className="text-4xl font-bold text-white mb-2">
+                <Counter target={parseInt(stat.number)} />
+                {stat.number.replace(/\d+/g, '')}
+              </div>
               <div className="text-[10px] tracking-[0.2em] text-gray-500 font-black uppercase">{stat.label}</div>
             </motion.div>
           ))}
