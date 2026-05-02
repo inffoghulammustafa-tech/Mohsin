@@ -90,7 +90,16 @@ export default function Footer() {
                   </div>
                   <div>
                     <span className="text-[10px] uppercase text-gray-500 font-bold block mb-1">Email</span>
-                    <p className="text-white text-xs font-bold break-all">inffo.ghulammustafa@gmail.com</p>
+                    <p className="text-white text-xs font-bold break-all">syedmohsinabbas077@gmail.com</p>
+                  </div>
+                </div>
+                <div className="flex gap-4 items-start">
+                  <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500 shrink-0">
+                    <Phone size={16} />
+                  </div>
+                  <div>
+                    <span className="text-[10px] uppercase text-gray-500 font-bold block mb-1">Mobile</span>
+                    <p className="text-white text-xs font-bold">03057615767</p>
                   </div>
                 </div>
               </div>

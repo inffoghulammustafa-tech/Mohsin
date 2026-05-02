@@ -10,25 +10,36 @@ export default function Hero() {
     <section className="min-h-screen flex flex-col justify-center items-center px-6 pt-48 relative overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
+        animate={{ 
+          opacity: 1, 
+          scale: 1,
+          y: [0, -10, 0] 
+        }}
+        transition={{ 
+          opacity: { duration: 1.5, ease: "easeOut" },
+          scale: { duration: 1.5, ease: "easeOut" },
+          y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+        }}
         className="relative w-72 h-72 md:w-96 md:h-96 mb-12 flex items-center justify-center pointer-events-none"
       >
         <div className="absolute inset-0 rounded-full border border-blue-500/20 animate-[spin_20s_linear_infinite]" />
         <div className="absolute inset-4 rounded-full border border-purple-500/10 animate-[spin_15s_linear_infinite_reverse]" />
         <div className="absolute inset-0 bg-blue-500/5 blur-3xl rounded-full" />
         
-        <div className="relative z-10 w-full h-full rounded-full overflow-hidden border border-white/10 p-1">
-          <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
-             <div className="w-full h-full opacity-30 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-          </div>
+        <div className="relative z-10 w-full h-full rounded-full overflow-hidden border border-white/10">
+          <img 
+            src="https://i.pinimg.com/736x/37/01/d1/3701d16606a8908bcc92bdf78d7fc52f.jpg" 
+            alt="Profile" 
+            className="w-full h-full object-cover object-top rounded-full scale-110"
+            referrerPolicy="no-referrer"
+          />
         </div>
 
         <motion.div 
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="absolute -right-12 top-1/2 -translate-y-1/2 bg-red-600 text-white text-[10px] md:text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-2 shadow-lg z-20 whitespace-nowrap"
+          className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] md:text-xs font-bold px-4 py-2 rounded-full flex items-center gap-2 shadow-[0_0_20px_rgba(220,38,38,0.3)] z-20 whitespace-nowrap"
         >
           <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
           AVAILABLE FOR FREELANCE
