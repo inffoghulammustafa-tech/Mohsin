@@ -47,6 +47,16 @@ export default function Hero() {
       </motion.div>
 
       <div className="text-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-blue-500 font-bold tracking-[0.3em] uppercase text-xs md:text-sm mb-6 flex items-center justify-center gap-3"
+        >
+          <span className="w-8 h-px bg-blue-500/30" />
+          I am Mohsin Abbas
+          <span className="w-8 h-px bg-blue-500/30" />
+        </motion.div>
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
